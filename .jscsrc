@@ -1,0 +1,12 @@
+{
+  "preset": "google",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "disallowSpacesInFunctionExpression": null,
+  "disallowMultipleVarDecl": null,
+  "maximumLineLength": 120,
+  "requireLineFeedAtFileEnd": null,
+  "validateQuoteMarks": {
+    "mark": "'",
+    "escape": true
+  }
+}

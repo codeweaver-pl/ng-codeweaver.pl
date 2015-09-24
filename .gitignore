@@ -1,0 +1,24 @@
+### ng-codeweaver.pl
+# build results
+dist
+
+# test results
+test-results
+
+# coverage output
+coverage
+
+# node libraries
+node_modules
+
+# npm dumps
+npm-debug.log
+
+# IDE project files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# IDE output files
+out

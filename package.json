@@ -1,0 +1,12 @@
+{
+  "name": "ng-codeweaver.pl",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "files": [],
+  "keywords": [],
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0"
+  }
+}
