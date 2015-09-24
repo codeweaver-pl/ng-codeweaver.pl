@@ -1,17 +1,19 @@
-(function () {
-  'use strict';
+'use strict';
 
-// create and bootstrap application
-  angular.element(document).ready(function () {
+var angular = require('angular');
 
-    var dependencies = [];
+angular.element(document)
+  .ready(onDocumentReady);
 
-    // mount on window for testing
-    window.app = angular.module('app', dependencies).controller('AppController', function($scope, $rootScope) {
-      $rootScope.pageTitle = 'ng-codeweaver.pl';
-      $scope.greeting = 'HELLO !';
-    });
+function onDocumentReady() {
 
-    angular.bootstrap(document, ['app']);
-  });
-})();
+  angular.module('app', [])
+    .controller('AppController', AppController);
+
+  angular.bootstrap(document, ['app']);
+
+  function AppController($scope, $rootScope) {
+    $rootScope.pageTitle = 'ng-codeweaver.pl';
+    $scope.greeting = 'HELLO';
+  }
+}
