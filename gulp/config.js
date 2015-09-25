@@ -16,10 +16,12 @@ module.exports = {
   },
   views:      {
     root: '/',
+    homeSrc: 'app/index.html',
     home: '/index.html',
-    src:  'app/**/*.html'
+    templateSrc: 'app/**/*.tpl.html'
   },
   scripts:    {
+    root: 'app/js',
     src: 'app/js/**/*.js'
   },
   browserify: {
