@@ -1,15 +1,13 @@
 'use strict';
 
 var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
     config      = require('../config'),
     browserify  = require('browserify'),
     source      = require('vinyl-source-stream'),
     watchify    = require('watchify'),
-    browserSync = require('browser-sync'),
-    _           = require('lodash');
+    browserSync = require('browser-sync');
 
-function buildScript() {
+gulp.task('browserify', function () {
 
   var bundler = browserify(config.browserify.bundler);
 
@@ -19,26 +17,17 @@ function buildScript() {
   }
 
   config.browserify.transforms.forEach(function (transform) {
-    console.log("");
-    bundler.transform(transform, {});
+    bundler.transform(transform);
   });
 
   return rebundle();
 
   function rebundle() {
-    gutil.log('rebundle');
 
-    var stream = bundler.bundle();
-
-    return stream
+    return bundler.bundle()
       .on('error', console.log)
       .pipe(source(config.browserify.bundle))
       .pipe(gulp.dest(config.dist.scripts))
       .pipe(browserSync.stream({once: true}));
   }
-}
-
-gulp.task('browserify', function () {
-
-  return buildScript();
 });

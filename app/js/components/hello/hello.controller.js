@@ -1,6 +1,6 @@
 'use strict';
 
-var componentsModule = require('../_index');
+var componentsModule = require('../module');
 
 componentsModule
   .controller('HelloController', HelloController);

@@ -1,7 +1,7 @@
 'use strict';
 
 var angular = require('angular'),
-    components = require('./components/_index');
+    components = require('./components/module');
 
 angular.element(document)
   .ready(onDocumentReady);
