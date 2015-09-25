@@ -1,7 +1,7 @@
 'use strict';
 
 var ngAnnotate = require('browserify-ngannotate'),
- brfs= require('brfs');
+    ngHtml2Js  = require("browserify-ng-html2js");
 
 module.exports = {
   ports:      {
@@ -15,23 +15,24 @@ module.exports = {
     out:     'dist/**'
   },
   views:      {
-    root: '/',
-    homeSrc: 'app/index.html',
-    home: '/index.html',
+    root:        '/',
+    homeSrc:     'app/index.html',
+    home:        '/index.html',
     templateSrc: 'app/**/*.tpl.html'
   },
   scripts:    {
     root: 'app/js',
-    src: 'app/js/**/*.js'
+    src:  'app/js/**/*.js'
   },
-  test: {
+  test:       {
     karma: {
       configFile: 'test/karma.conf.js',
-      action: 'run'
-    }
+      action:     'run'
+    },
+    src:   'test/js/**/*.spec.js'
   },
   browserify: {
-    bundler:       {
+    bundler:    {
       entries:      ['./app/js/main.js'],
       debug:        true,
       cache:        {},
@@ -40,6 +41,12 @@ module.exports = {
     },
     transforms: [
       ngAnnotate,
+      ngHtml2Js({
+        prefix:         '',
+        module:         'templates',
+        extension:      'tpl.html',
+        requireAngular: true
+      }),
       'brfs',
       'bulkify'
     ],

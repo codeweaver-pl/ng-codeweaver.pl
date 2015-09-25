@@ -6,4 +6,5 @@ var gulp   = require('gulp'),
 gulp.task('watch', ['server', 'browser-sync'], function () {
   gulp.watch(config.views.src, ['views']);
   gulp.watch(config.scripts.src, ['browserify']);
+  gulp.watch(config.test.src, ['test']);
 });

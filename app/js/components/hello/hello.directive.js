@@ -3,6 +3,8 @@
 var componentsModule = require('../module'),
     HelloController  = require('./hello.controller');
 
+require('./hello.tpl.html');
+
 componentsModule
   .directive('hello', hello);
 
@@ -10,7 +12,7 @@ function hello() {
 
   return {
     restrict:     'E',
-    templateUrl:  'js/components/hello/hello.tpl.html',
+    templateUrl:  'hello.tpl.html',
     scope:        {
       name: '@'
     },

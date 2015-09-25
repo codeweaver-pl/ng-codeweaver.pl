@@ -15,7 +15,7 @@ function HelloController($scope, $rootScope) {
   vm.sayHello = sayHello;
 
   function sayHello() {
-    return 'Hail ' + $scope.name;
+    return 'Hello ' + $scope.name;
   }
 }
 

@@ -22,6 +22,6 @@ describe('HelloController', function () {
   });
 
   it('should say hello properly', function () {
-    expect(ctrl.sayHello()).to.equal('Hail John Snow');
+    expect(ctrl.sayHello()).to.equal('Hello John Snow');
   });
 });

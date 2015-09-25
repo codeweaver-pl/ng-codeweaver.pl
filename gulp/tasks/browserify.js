@@ -7,7 +7,7 @@ var gulp        = require('gulp'),
     watchify    = require('watchify'),
     browserSync = require('browser-sync');
 
-gulp.task('browserify', ['views'], function () {
+gulp.task('browserify', ['test'], function () {
 
   var bundler = browserify(config.browserify.bundler);
 

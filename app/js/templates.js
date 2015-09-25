@@ -1,1 +1,0 @@
-'use strict'; module.exports = angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("js/components/hello/hello.tpl.html","<div>\n    <span class=\"greeting welcome\">{{vm.sayHello()}}</span>\n</div>");}]);
