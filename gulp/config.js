@@ -24,6 +24,12 @@ module.exports = {
     root: 'app/js',
     src: 'app/js/**/*.js'
   },
+  test: {
+    karma: {
+      configFile: 'test/karma.conf.js',
+      action: 'run'
+    }
+  },
   browserify: {
     bundler:       {
       entries:      ['./app/js/main.js'],

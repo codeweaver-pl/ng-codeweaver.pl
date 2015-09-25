@@ -1,0 +1,17 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "latedef": "nofunc",
+  "noarg": true,
+  "eqnull": true,
+  "globalstrict": true,
+  "node": true,
+  "unused": true,
+  "undef": true,
+  "browser": true,
+  "mocha": true,
+  "globals": {
+    "chai": false,
+    "inject": false
+  }
+}
