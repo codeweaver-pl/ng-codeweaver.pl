@@ -1,19 +1,20 @@
 'use strict';
 
-var angular = require('angular');
+var angular = require('angular'),
+    components = require('./components/_index');
 
 angular.element(document)
   .ready(onDocumentReady);
 
 function onDocumentReady() {
 
-  angular.module('app', [])
+  angular.module('app', [components.name])
     .controller('AppController', AppController);
 
   angular.bootstrap(document, ['app']);
 
   function AppController($scope, $rootScope) {
     $rootScope.pageTitle = 'ng-codeweaver.pl';
-    $scope.greeting = 'HELLO';
+    $scope.greeting = 'Good day ';
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 var ngAnnotate = require('browserify-ngannotate'),
-    transforms = [ngAnnotate];
+ brfs= require('brfs');
 
 module.exports = {
   ports:      {
@@ -23,11 +23,18 @@ module.exports = {
     src: 'app/js/**/*.js'
   },
   browserify: {
-    init:   {
-      entries:   'app/js/main.js',
-      debug:     true,
-      transform: transforms
+    bundler:       {
+      entries:      ['./app/js/main.js'],
+      debug:        true,
+      cache:        {},
+      packageCache: {},
+      fullPaths:    !global.release
     },
-    bundle: 'bundle.js'
+    transforms: [
+      ngAnnotate,
+      'brfs',
+      'bulkify'
+    ],
+    bundle:     'bundle.js'
   }
 };

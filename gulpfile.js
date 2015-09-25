@@ -3,7 +3,15 @@
 /*
  * gulpfile.js
  * ===========
- * To add a new task, simply add a new task file to gulp/tasks.
+ * To add a new task, create a gulp task file in gulp/tasks.
  */
+
+/**
+ * gulp execution mode flag
+ *  false - development mode
+ *  true - release mode
+ * @type {boolean}
+ */
+global.release = false;
 
 require('./gulp');
